@@ -1,11 +1,17 @@
 import React from 'react';
-import SearchBar from './searchbar';
+
 
 
 const Header = () => {
   return (<div className="header">
-    <div><SearchBar /></div>
-    <div>Where in the world?</div>
+    <div className="navbar">
+        <ul>
+            <li><h2>Where in the world?</h2></li>
+            
+        </ul>
+    </div>
+    
+   
   </div>);
 };
 

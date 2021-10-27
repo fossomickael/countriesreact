@@ -3,7 +3,7 @@ import Vignette from '../components/vignette';
 import { setPays } from "../actions/pays";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import SearchBar from './searchbar';
 class ListePays extends Component {
 
     componentDidMount() {
@@ -13,12 +13,15 @@ class ListePays extends Component {
     render() {
       if (this.props.pays === "error")
        {
+        <div><SearchBar /></div>
          return "No Countries found!"
        }
       return (
+        <div><SearchBar />
         <div className="listepays"> {this.props.pays.map((pays) => {
             return <Vignette key={pays.name} pays={pays} />;
         })} </div>
+        </div>
       );
     }
 }

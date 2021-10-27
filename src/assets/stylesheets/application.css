@@ -23,6 +23,19 @@ body {
   object-fit: cover;
 }
 
+.navbar {
+  background-color: white;
+  height: 48px;
+  height: 78px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .pays {
   width: 100%;
 }
@@ -40,3 +53,6 @@ body {
   margin-right: auto;
 }
 
+.loupe {
+  height: 16px;
+}
