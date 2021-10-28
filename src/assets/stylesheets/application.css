@@ -56,3 +56,27 @@ ul {
 .loupe {
   height: 16px;
 }
+
+.unpays {
+  display: flex;
+}
+
+.unpaysdetails {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+}
+
+.unpaysimg {
+  width: 400px;
+  height: 300px;
+  margin: 16px;
+}
+
+.paysdroite {
+  padding-top: 25px;
+}
+
+.border {
+  margin-top: 48px;
+}
