@@ -19,11 +19,12 @@ class SearchBar extends Component {
     render() {
         return (
           <div >
-            Enter your search: 
+           
             <input
               type="text"
               className="form-control form-search"
               onChange={this.handleUpdate}
+              placeholder="Search for a country"
             />
               <div><i className="fas fa-search"></i></div> 
             </div>

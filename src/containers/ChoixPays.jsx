@@ -12,13 +12,12 @@ class ChoixPays extends Component {
     render() {
         return (
           <div >
-            
-            <label for="region-select">Choose a region:</label>
+          
 
-                <select name="regions" id="region-select" onChange={this.handleSelect}>
+                <select className="selectregion" name="regions" id="region-select" onChange={this.handleSelect}>
                     <option value="">Filter by region</option>
                     <option value="africa">Africa</option>
-                    <option value="america">America</option>
+                    <option value="americas">America</option>
                     <option value="asia">Asia</option>
                     <option value="europe">Europe</option>
                     <option value="oceania">Oceania</option>

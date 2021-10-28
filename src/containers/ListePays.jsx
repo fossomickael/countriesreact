@@ -4,6 +4,7 @@ import { setPays } from "../actions/pays";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SearchBar from './searchbar';
+import ChoixPays from './ChoixPays'
 class ListePays extends Component {
 
     componentDidMount() {
@@ -13,12 +14,25 @@ class ListePays extends Component {
     render() {
       if (this.props.pays === "error")
        {
-        <div><SearchBar /></div>
-         return "No Countries found!"
+        return (
+        <div>
+          <div className="searchelements">
+            <div><SearchBar /></div>
+            <div className="choix"><ChoixPays /></div>  
+            <div className="listepays"> "No Countries found!"</div>
+          </div>
+        </div>
+          );
        }
       return (
-        <div><SearchBar />
-        <div className="listepays"> {this.props.pays.map((pays) => {
+        <div>
+         <div className="searchelements">
+          <div><SearchBar /></div>
+          <div className="choix"><ChoixPays /></div>  
+        </div>
+        <div className="listepays"> 
+       
+        {this.props.pays.map((pays) => {
             return <Vignette key={pays.name} pays={pays} />;
         })} </div>
         </div>

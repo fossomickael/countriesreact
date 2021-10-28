@@ -2,6 +2,10 @@ body {
   background:  #F8F8F8; 
 }
 
+.header {
+  margin-bottom: 16px;
+}
+
 .card {
   flex: 0 1 19%;
   background-color: white;
@@ -10,6 +14,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.063) 0px 0px 3px 3px;
   border-radius: 5px;
   margin: 30px;
+  padding: 0px;
  
 }
 
@@ -28,6 +33,12 @@ body {
   height: 48px;
   height: 78px;
   display: flex;
+  justify-content: space-between;
+}
+
+.searchelements {
+  display: flex;
+  justify-content: space-between;
 }
 
 ul {
@@ -86,4 +97,10 @@ ul {
   background-color: white;
   margin-top: 16px;
   border:0px;
+}
+
+.selectregion {
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
 }
