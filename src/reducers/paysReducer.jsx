@@ -11,6 +11,8 @@ const paysReducer = (state, action) => {
         return action.payload;
       case "fetch_one_country_FULFILLED":
         return action.payload;
+      case "filter_one_region_FULFILLED":
+          return action.payload;
       default:
         return state;
     }

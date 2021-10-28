@@ -1,5 +1,5 @@
 
-import { FETCH_ALL_COUNTRIES, SEARCH_COUNTRIES,  FETCH_ONE_COUNTRY } from './types';
+import { FETCH_ALL_COUNTRIES, SEARCH_COUNTRIES,  FETCH_ONE_COUNTRY, FILTRER_ONE_REGION } from './types';
 const BASE_URL = 'https://restcountries.com';
 
 export const setPays = () => {
@@ -45,6 +45,18 @@ export const chercheUnPays = (alpha3Code) => {
       const response = await fetch(url);
       const un_pays = await response.json();
       return [un_pays];
+    }
+};
+};
+
+export const filtrerRegion = (name) => {
+  return {
+    type: FILTRER_ONE_REGION,
+    async payload () {
+      const url = `${BASE_URL}/v2/region/${name}`;
+      const response = await fetch(url);
+      const pays = await response.json();
+      return pays;
     }
 };
 };
