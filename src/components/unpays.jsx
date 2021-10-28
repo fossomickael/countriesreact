@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { chercheUnPays } from "../actions/pays";
 import { connect } from 'react-redux';
+import Back from './back';
 
 
 class UnPays extends Component {
@@ -25,10 +26,14 @@ class UnPays extends Component {
         
     }
     render() {
+        
         if (!this.props.unpays) {
             return <div>Loading</div>;
           }
-        return (<div className="unpays">
+        return (
+            <div>
+        <div><Back /></div><div className="unpays">
+        
         <div>
             <img className="unpaysimg" alt="drapeau" src={`${this.props.unpays.flag}`} />
         </div>
@@ -56,6 +61,7 @@ class UnPays extends Component {
 
         
       
+        </div>
         </div>);
     };
 
