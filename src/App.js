@@ -12,7 +12,7 @@ class App extends Component {
       <div >
           <BrowserRouter>
               <Header />
-              <div className="container">
+              <div className="container" id="mode">
                   <Route exact path="/" component={ListePays} />
                   <Route path="/pays/:code" component={UnPays}  />
                   
