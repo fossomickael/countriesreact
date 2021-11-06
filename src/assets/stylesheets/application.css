@@ -6,9 +6,13 @@ body {
   margin-bottom: 16px;
 }
 
+.dark-header {
+  background-color: hsl(207, 26%, 17%);
+}
+
 .card {
   flex: 0 1 19%;
-  background-color: white;
+  
   margin-bottom: 8px;
   font-size: 0.7em;
   box-shadow: rgba(0, 0, 0, 0.063) 0px 0px 3px 3px;
@@ -18,12 +22,20 @@ body {
  
 }
 
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
 .paysinfo {
   padding: 2px 16px;
 }
 
 .dark {
-  background:  #003366;
+  background-color:  rgb(43, 57, 69);
+  color:white;
 }
 
 .drapeau {
@@ -33,16 +45,18 @@ body {
 }
 
 .btn-switch {
+  color: inherit;
   border: none;
-  font-size: 16px;
+  background: transparent;
 }
 
 .navbar {
-  background-color: white;
+  
   height: 64px;
   display: flex;
   justify-content: space-between;
   padding: 16px;
+
 }
 
 .searchelements {
@@ -59,6 +73,7 @@ ul {
 
 .pays {
   width: 100%;
+  
 }
 
 .listepays {
@@ -72,6 +87,8 @@ ul {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  min-height:100%;
+  
 }
 
 .loupe {
@@ -112,4 +129,8 @@ ul {
   border: none;
   border-radius: 4px;
   padding: 8px;
+}
+
+.searchbar {
+  background: transparent;
 }

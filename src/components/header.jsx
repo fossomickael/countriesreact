@@ -1,15 +1,15 @@
 import React from 'react';
-import Switch from "./switch";
+import SwitchLight from "./switchlight";
 
 
 const Header = () => {
   return (
-  <div className="header">
+  <div className="header" id="header">
       <div className="navbar">
         <div>
            <b>Where in the world?</b>
         </div>
-        <Switch />
+        <SwitchLight />
         
       </div>
     
