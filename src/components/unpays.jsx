@@ -7,13 +7,15 @@ import Back from './back';
 
 class UnPays extends Component {
     componentDidMount() {
-         
         if (!this.props.unpays) {
             this.props.chercheUnPays(this.props.match.params.code);
          }
     }
 
     extractvalues = (array, tofind) => {
+        if (!array) {
+            return "None";
+        }
         return array.map(a => a[tofind]).toString();
     }
 

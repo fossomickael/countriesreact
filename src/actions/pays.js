@@ -14,8 +14,8 @@ export const cherchePays = (search) => async dispatch =>  {
 
 
 export const chercheUnPays = (alpha3Code) => async dispatch => {
-  const response = await countriesAPI.get(`/v2/name/${alpha3Code}`);
-  dispatch({ type: FETCH_ONE_COUNTRY, payload: response.data });
+  const response = await countriesAPI.get(`/v2/alpha/${alpha3Code}`);
+  dispatch({ type: FETCH_ONE_COUNTRY, payload: [response.data]});
 };
 
 export const filtrerRegion = (name)  => async dispatch => {
