@@ -17,7 +17,7 @@ class ListePays extends Component {
         return (
         <div>
           <div className="searchelements">
-            <div><SearchBar /></div>
+            <div className="searchbar" id="searchbar"><SearchBar /></div>
             <div className="choix"><ChoixPays /></div>  
             <div className="listepays"> "No Countries found!"</div>
           </div>
@@ -27,7 +27,7 @@ class ListePays extends Component {
       return (
         <div>
          <div className="searchelements">
-          <div><SearchBar /></div>
+          <div className="searchbar" id="searchbar"><SearchBar /></div>
           <div className="choix"><ChoixPays /></div>  
         </div>
         <div className="listepays"> 

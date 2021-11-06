@@ -3,19 +3,22 @@ import React, { useState } from 'react';
 
 const SwitchLight = () => {
     const [mode, setMode] = useState("dark");
-    const [icon, setIcon]  = useState(<i class="fas fa-moon"></i>);
+    const [icon, setIcon]  = useState(<i className="fas fa-moon"></i>);
     const handleSwitch = () => {
         if (mode === "light") {   
             setMode("dark");
-            setIcon(<i class="fas fa-moon"></i>);
+            setIcon(<i className="fas fa-moon"></i>);
         } else if (mode === "dark") {
             setMode("light");
-            setIcon(<i class="far fa-lightbulb"></i>);
+            setIcon(<i className="far fa-lightbulb"></i>);
         }
-        const element = document.getElementById("root");
+        document.body.classList.toggle("dark");
+        const selectregion = document.getElementById("region-select");
+        selectregion.classList.toggle("dark");
         const header = document.getElementById("header");
-        element.classList.toggle("dark");
-        header.classList.toggle("dark");
+        header.classList.toggle("dark-header");
+      
+        
     }
 
     return (

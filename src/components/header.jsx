@@ -1,5 +1,5 @@
 import React from 'react';
-import SwitchLight from "./switch";
+import SwitchLight from "./switchlight";
 
 
 const Header = () => {
