@@ -1,62 +1,25 @@
 
 import { FETCH_ALL_COUNTRIES, SEARCH_COUNTRIES,  FETCH_ONE_COUNTRY, FILTRER_ONE_REGION } from './types';
-const BASE_URL = 'https://restcountries.com';
+import countriesAPI from '../apis/countries';
 
-export const setPays = () => {
-    return {
-      type: FETCH_ALL_COUNTRIES,
-      async payload () {
-        const url = `${BASE_URL}/v2/all`;
-        const response = await fetch(url);
-        const pays = await response.json();
-        return pays;
-      }
-  };
+export const setPays = () => async dispatch => {
+    const response = await countriesAPI.get('/v2/all');
+    dispatch({ type: FETCH_ALL_COUNTRIES, payload: response.data });
 };
 
-export const cherchePays = (search) => {
-  return {
-    type: SEARCH_COUNTRIES,
-    async payload () {
-      const url = `${BASE_URL}/v2/name/${search}`;
-      try {
-        const response = await fetch(url);
-        const pays = await response.json();
-        if (pays["status"] === 404)
-        {
-          return "error";
-        }
-        return pays;
-      }
-      catch(err) {
-        return err;
-      }
-
-      
-    }
-};
+export const cherchePays = (search) => async dispatch =>  {
+  const response = await countriesAPI.get(`/v2/name/${search}`);
+  dispatch({ type: SEARCH_COUNTRIES, payload: response.data });
 };
 
-export const chercheUnPays = (alpha3Code) => {
-  return {
-    type: FETCH_ONE_COUNTRY,
-    async payload () {
-      const url = `${BASE_URL}/v2/alpha/${alpha3Code}`;
-      const response = await fetch(url);
-      const un_pays = await response.json();
-      return [un_pays];
-    }
-};
+
+export const chercheUnPays = (alpha3Code) => async dispatch => {
+  const response = await countriesAPI.get(`/v2/name/${alpha3Code}`);
+  dispatch({ type: FETCH_ONE_COUNTRY, payload: response.data });
 };
 
-export const filtrerRegion = (name) => {
-  return {
-    type: FILTRER_ONE_REGION,
-    async payload () {
-      const url = `${BASE_URL}/v2/region/${name}`;
-      const response = await fetch(url);
-      const pays = await response.json();
-      return pays;
-    }
-};
+export const filtrerRegion = (name)  => async dispatch => {
+  const response = await countriesAPI.get(`/v2/region/${name}`);
+  dispatch({ type: FILTRER_ONE_REGION, payload: response.data });
+ 
 };
