@@ -1,5 +1,5 @@
 import React from 'react';
-import ChoixPays from '../containers/ChoixPays'
+import Switch from "./switch";
 
 
 const Header = () => {
@@ -7,8 +7,9 @@ const Header = () => {
   <div className="header">
       <div className="navbar">
         <div>
-           <h2>Where in the world?</h2>
+           <b>Where in the world?</b>
         </div>
+        <Switch />
         
       </div>
     

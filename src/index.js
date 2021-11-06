@@ -6,14 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware} from 'redux';
 import reducers from './reducers';
-import promise from 'redux-promise-middleware';
+import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import './assets/stylesheets/application.css';
 const initialState = {
   pays: []
 };
 
-const middlewares = applyMiddleware(promise, logger);
+const middlewares = applyMiddleware(thunk, logger);
 const store = createStore(reducers, initialState, middlewares);
 
 

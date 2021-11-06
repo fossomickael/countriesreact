@@ -1,17 +1,17 @@
-import { FETCH_ALL_COUNTRIES } from '../actions/types';
+import  { FETCH_ALL_COUNTRIES, SEARCH_COUNTRIES,  FETCH_ONE_COUNTRY, FILTRER_ONE_REGION } from '../actions/types';
 
 const paysReducer = (state, action) => {
     if (state === undefined) {
       return [];
     }
     switch (action.type) {
-      case "fetch_all_countries_FULFILLED":
+      case FETCH_ALL_COUNTRIES:
         return action.payload;
-      case "search_countries_FULFILLED":
+      case SEARCH_COUNTRIES:
         return action.payload;
-      case "fetch_one_country_FULFILLED":
+      case FETCH_ONE_COUNTRY:
         return action.payload;
-      case "filter_one_region_FULFILLED":
+      case FILTRER_ONE_REGION:
           return action.payload;
       default:
         return state;
