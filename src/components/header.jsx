@@ -1,5 +1,5 @@
 import React from 'react';
-import Switch from "./switch";
+import SwitchLight from "./switch";
 
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
         <div>
            <b>Where in the world?</b>
         </div>
-        <Switch />
+        <SwitchLight />
         
       </div>
     
