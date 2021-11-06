@@ -14,7 +14,9 @@ const SwitchLight = () => {
         }
         document.body.classList.toggle("dark");
         const selectregion = document.getElementById("region-select");
-        selectregion.classList.toggle("dark");
+        if (selectregion) {
+            selectregion.classList.toggle("dark");
+        }
         const header = document.getElementById("header");
         header.classList.toggle("dark-header");
       
