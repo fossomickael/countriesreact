@@ -32,6 +32,9 @@ export const ajoutPaysFrontiere = (codes)  => async dispatch => {
 export const fetchCountriesAndBorders = (alpha3Code) => async (dispatch, getState) => {
   await  dispatch(chercheUnPays(alpha3Code));
   const country = getState().pays;
-  dispatch(ajoutPaysFrontiere(country[0].borders.toString()));
+  if (country[0].borders) {
+    dispatch(ajoutPaysFrontiere(country[0].borders.toString()));
+  }
+  
  
 };
