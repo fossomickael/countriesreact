@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const Switch = () => {
+const SwitchLight = () => {
     const [mode, setMode] = useState("dark");
     const [icon, setIcon]  = useState(<i class="fas fa-moon"></i>);
     const handleSwitch = () => {
@@ -13,7 +13,9 @@ const Switch = () => {
             setIcon(<i class="far fa-lightbulb"></i>);
         }
         const element = document.getElementById("root");
+        const header = document.getElementById("header");
         element.classList.toggle("dark");
+        header.classList.toggle("dark");
     }
 
     return (
@@ -25,4 +27,4 @@ const Switch = () => {
     );
 };
 
-export default Switch;
+export default SwitchLight;

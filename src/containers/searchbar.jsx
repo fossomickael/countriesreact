@@ -26,7 +26,10 @@ class SearchBar extends Component {
               onChange={this.handleUpdate}
               placeholder="Search for a country"
             />
-              <div><i className="fas fa-search"></i></div> 
+            <button type="submit" class="search-button">
+              <i className="fas fa-search"></i>
+            </button>
+             
             </div>
         );
       }
