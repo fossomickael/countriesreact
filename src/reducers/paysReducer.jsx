@@ -1,4 +1,4 @@
-import  { FETCH_ALL_COUNTRIES, SEARCH_COUNTRIES,  FETCH_ONE_COUNTRY, FILTRER_ONE_REGION } from '../actions/types';
+import  { FETCH_ALL_COUNTRIES, SEARCH_COUNTRIES,  FETCH_ONE_COUNTRY, FILTRER_ONE_REGION, ADD_BORDER_COUNTRIES } from '../actions/types';
 
 const paysReducer = (state, action) => {
     if (state === undefined) {
@@ -10,7 +10,9 @@ const paysReducer = (state, action) => {
       case SEARCH_COUNTRIES:
         return action.payload;
       case FETCH_ONE_COUNTRY:
-        return action.payload;
+        return [...state, action.payload];
+      case ADD_BORDER_COUNTRIES:
+        return [...state, ...action.payload];
       case FILTRER_ONE_REGION:
           return action.payload;
       default:

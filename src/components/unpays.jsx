@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { chercheUnPays } from "../actions/pays";
+import { fetchCountriesAndBorders } from "../actions/pays";
 import { connect } from 'react-redux';
 import Back from './back';
 
@@ -8,9 +8,11 @@ import Back from './back';
 class UnPays extends Component {
     componentDidMount() {
         if (!this.props.unpays) {
-            this.props.chercheUnPays(this.props.match.params.code);
+            this.props.fetchCountriesAndBorders(this.props.match.params.code);
          }
     }
+
+   
 
     extractvalues = (array, tofind) => {
         if (!array) {
@@ -22,10 +24,18 @@ class UnPays extends Component {
     extractborders = (array) => {
         if (array)
         {
-            return array.toString();
+           return array.map(code => this.findCountry(code));
+            
         }
         return "No border countries"
         
+    }
+
+    findCountry = (code ) => {
+        const country = this.props.pays.find( unpays =>  unpays.alpha3Code === code);
+        if (country) {
+            return country.name
+        }
     }
     render() {
         
@@ -75,12 +85,13 @@ const mapStateToProps = (state, ownProps) => {
     
     return {
       unpays: state.pays.find( unpays =>  unpays.alpha3Code === alpha3Code),
+      pays: state.pays
     
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ chercheUnPays } , dispatch);
+    return bindActionCreators({ fetchCountriesAndBorders } , dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UnPays);
