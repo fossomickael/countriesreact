@@ -11,20 +11,22 @@ class ListePays extends Component {
       this.props.setPays();
     }
 
+    afficherPays = (pays) => {
+      console.log(pays)
+      if (pays.status === 404)
+      {
+        return <div className="listepays"> "No Countries found!"</div>
+      }
+      else 
+      {
+        return pays.map((pays) => {
+          return <Vignette key={pays.name} pays={pays} />;
+        })
+      }
+      
+    }
+
     render() {
-      console.log(this.props.pays)
-      if (this.props.pays.status === 404)
-       {
-        return (
-        <div>
-          <div className="searchelements">
-            <div className="searchbar" id="searchbar"><SearchBar /></div>
-            <div className="choix"><ChoixPays /></div>  
-          </div>
-          <div className="listepays"> "No Countries found!"</div>
-        </div>
-          );
-       }
       return (
         <div>
          <div className="searchelements">
@@ -32,10 +34,8 @@ class ListePays extends Component {
           <div className="choix"><ChoixPays /></div>  
         </div>
         <div className="listepays"> 
-       
-        {this.props.pays.map((pays) => {
-            return <Vignette key={pays.name} pays={pays} />;
-        })} </div>
+            {this.afficherPays(this.props.pays)}
+        </div>
         </div>
       );
     }
