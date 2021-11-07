@@ -7,9 +7,7 @@ import Back from './back';
 
 class UnPays extends Component {
     componentDidMount() {
-        if (!this.props.unpays) {
-            this.props.fetchCountriesAndBorders(this.props.match.params.code);
-         }
+        this.props.fetchCountriesAndBorders(this.props.match.params.code);
     }
 
    
