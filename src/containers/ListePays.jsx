@@ -12,15 +12,16 @@ class ListePays extends Component {
     }
 
     render() {
-      if (this.props.pays === "error")
+      console.log(this.props.pays)
+      if (this.props.pays.status === 404)
        {
         return (
         <div>
           <div className="searchelements">
             <div className="searchbar" id="searchbar"><SearchBar /></div>
             <div className="choix"><ChoixPays /></div>  
-            <div className="listepays"> "No Countries found!"</div>
           </div>
+          <div className="listepays"> "No Countries found!"</div>
         </div>
           );
        }
