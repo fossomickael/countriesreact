@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Rubik:wght@300;400;500&display=swap');
+
+
+
 body {
   background:  #F8F8F8; 
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .header {
@@ -149,6 +154,24 @@ ul {
 
   .listepays {
     display: inline;
+  }
+
+  .unpays {
+    display: inline;
+  }
+
+  .unpaysdetails {
+    display: inline;
+  }
+
+  .unpaysimg {
+    width: 90%;
+    height: 200px;
+    margin: 16px;
+  }
+  
+  .otherdetails {
+    margin-top: 16px;
   }
   
 }
