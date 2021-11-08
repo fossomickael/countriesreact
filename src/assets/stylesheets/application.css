@@ -173,5 +173,18 @@ ul {
   .otherdetails {
     margin-top: 16px;
   }
+
+  .searchelements {
+    display: inline;
+    
+  }
+
+ .form-search {
+   width: 85%;
+ }
+
+ .choix {
+   margin-top: 16px;
+ }
   
 }
